@@ -4,7 +4,6 @@ export default function ColorSample({ color, id }) {
   return (
     <div
       className="ColorSample"
-      key={id}
       style={{
         backgroundColor: color
       }}

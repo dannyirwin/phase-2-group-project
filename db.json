@@ -1,0 +1,64 @@
+{
+  "palates": [
+    {
+      "colors": [
+        "#f5441a",
+        "#fbd273",
+        "#12176e",
+        "#b24f94",
+        "#d3a7d7",
+        "#4c3f25"
+      ],
+      "imageUrl": "https://i.imgur.com/bTqsPlA.jpg",
+      "id": 1
+    },
+    {
+      "colors": [
+        "#d2ca40",
+        "#92c7f5",
+        "#936d41",
+        "#5b879d",
+        "#cac3a9",
+        "#6d434c"
+      ],
+      "imageUrl": "https://i.imgur.com/8PycpVP.jpg",
+      "id": 2
+    },
+    {
+      "colors": [
+        "#e3432a",
+        "#ded78d",
+        "#6f1d16",
+        "#98845b",
+        "#83c198",
+        "#2e5052"
+      ],
+      "imageUrl": "https://i.imgur.com/rBkbXS3.jpg",
+      "id": 3
+    },
+    {
+      "colors": [
+        "#50c1b0",
+        "#74e4d0",
+        "#126042",
+        "#7e9b58",
+        "#85c8b1",
+        "#336537"
+      ],
+      "imageUrl": "https://i.imgur.com/MvSJVEl.jpeg",
+      "id": 4
+    },
+    {
+      "colors": [
+        "#c47941",
+        "#ec90a9",
+        "#3f1b0e",
+        "#9f7162",
+        "#d4a7a2",
+        "#6e423c"
+      ],
+      "imageUrl": "https://i.imgur.com/kMps4mU.jpg",
+      "id": 5
+    }
+  ]
+}
