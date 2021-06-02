@@ -21,18 +21,18 @@
   display: flex;
   flex-direction: row;
   height: 100px;
+  width: 810px;
 }
 
 .GalleryCard > .colors-container {
-  margin: 10px;
-}
-
-.GalleryCard > img {
-  margin: 10px;
+  margin-left: auto;
+  width: 600px;
+  justify-self: flex-end;
 }
 
 .gallery-image {
   max-height: 100%;
+  margin: auto;
 }
 
 .card {
