@@ -5,68 +5,70 @@ import MainCard from "./components/MainCard";
 import "./App.css";
 import GalleryContainer from "./containers/GalleryContainer";
 
-const newPalate = {
+const newPalette = {
   colors: ["#f5441a", "#fbd273", "#12176e", "#b24f94", "#d3a7d7", "#4c3f25"],
   imageUrl: "https://i.imgur.com/bTqsPlA.jpg"
 };
 
-const palatesUrl = "http://localhost:3000/palates/";
+const palettesUrl = "http://localhost:3000/palettes/";
 
 export default function App() {
-  const [palates, setPalates] = useState([]);
-  const [mainPalate, setMainPalate] = useState(null);
+  const [palettes, setPalettes] = useState([]);
+  const [mainPalette, setMainPalette] = useState(null);
 
-  const addPalate = palate => {
-    console.log("setting palates", palate);
-    setMainPalate(palate);
-    savePalatesToDB(palate);
+  const addPalette = palette => {
+    console.log("setting palettes", palette);
+    setMainPalette(palette);
+    savePalettesToDB(palette);
   };
 
-  const toggleView = (palate = null) => {
-    palate === "newPalate" ? setMainPalate(newPalate) : setMainPalate(palate);
+  const toggleView = (palette = null) => {
+    palette === "newPalette"
+      ? setMainPalette(newPalette)
+      : setMainPalette(palette);
   };
 
-  const getPalatesFromDB = () => {
-    fetch(palatesUrl)
+  const getPalettesFromDB = () => {
+    fetch(palettesUrl)
       .then(res => res.json())
-      .then(palates => setPalates(palates));
+      .then(palettes => setPalettes(palettes));
   };
 
-  const savePalatesToDB = palate => {
+  const savePalettesToDB = palette => {
     const options = {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(palate)
+      body: JSON.stringify(palette)
     };
-    fetch(palatesUrl, options)
+    fetch(palettesUrl, options)
       .then(res => res.json())
-      .then(palate => setPalates([...palates, palate]));
+      .then(palette => setPalettes([...palettes, palette]));
   };
 
-  const deletePalateFromDB = id => {
-    options = {
+  const deletePaletteFromDB = id => {
+    const options = {
       method: "DELETE"
     };
-    fetch(palatesUrl + id, options);
+    fetch(palettesUrl + id, options);
   };
 
   useEffect(() => {
-    getPalatesFromDB();
+    getPalettesFromDB();
   }, []);
 
   return (
     <div className="App">
-      {mainPalate ? (
+      {mainPalette ? (
         <MainCard
-          palate={mainPalate || newPalate}
+          palette={mainPalette || newPalette}
           toggleView={toggleView}
-          addPalate={addPalate}
+          addPalette={addPalette}
         />
       ) : (
-        <GalleryContainer palates={palates} toggleView={toggleView} />
+        <GalleryContainer palettes={palettes} toggleView={toggleView} />
       )}
     </div>
   );

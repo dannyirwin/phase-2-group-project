@@ -1,8 +1,8 @@
 import React from "react";
 import ColorSample from "./ColorSample";
 
-export default function GalleryCard({ palate, toggleView }) {
-  const { id, colors, imageUrl } = palate;
+export default function GalleryCard({ palette, toggleView }) {
+  const { id, colors, imageUrl } = palette;
 
   const showColorSamples = () => {
     return colors.map((color, id) => {
@@ -11,7 +11,7 @@ export default function GalleryCard({ palate, toggleView }) {
   };
 
   return (
-    <div className="GalleryCard" key={id} onClick={() => toggleView(palate)}>
+    <div className="GalleryCard" key={id} onClick={() => toggleView(palette)}>
       <img
         className="gallery-image"
         src={imageUrl}

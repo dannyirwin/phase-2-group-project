@@ -2,10 +2,10 @@ import React from "react";
 
 import GalleryCard from "../components/GalleryCard";
 
-export default function GalleryContainer({ palates, toggleView }) {
+export default function GalleryContainer({ palettes, toggleView }) {
   const showGalleryCards = () => {
-    return palates.map(palate => (
-      <GalleryCard key={palate.id} palate={palate} toggleView={toggleView} />
+    return palettes.map(palette => (
+      <GalleryCard key={palette.id} palette={palette} toggleView={toggleView} />
     ));
   };
 
@@ -13,8 +13,8 @@ export default function GalleryContainer({ palates, toggleView }) {
     <div className="Gallery">
       <h1>Gallery</h1>
       {showGalleryCards()}
-      <button onClick={() => toggleView("newPalate")}>
-        {palates.length === 0 ? "Add Palate" : "Add New Palate"}
+      <button onClick={() => toggleView("newpalette")}>
+        {palettes.length === 0 ? "Add palette" : "Add New palette"}
       </button>
     </div>
   );

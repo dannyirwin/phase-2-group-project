@@ -3,9 +3,9 @@ import { useState } from "react";
 import { ColorExtractor } from "react-color-extractor";
 import ColorSample from "./ColorSample";
 
-export default function App({ palate, addPalate, toggleView }) {
-  const [colors, setColors] = useState(palate.colors || []);
-  const [imageUrl, setImageUrl] = useState(palate.imageUrl || "noUrl");
+export default function App({ palette, addpalette, toggleView }) {
+  const [colors, setColors] = useState(palette.colors || []);
+  const [imageUrl, setImageUrl] = useState(palette.imageUrl || "noUrl");
 
   const [hasExtractedColors, setHasExtractedColors] = useState(false);
 
@@ -25,9 +25,9 @@ export default function App({ palate, addPalate, toggleView }) {
     setHasExtractedColors(true);
   };
 
-  const handleSavePalate = event => {
-    console.log("Adding palate", imageUrl);
-    addPalate({ colors, imageUrl });
+  const handleSavepalette = event => {
+    console.log("Adding palette", imageUrl);
+    addpalette({ colors, imageUrl });
     toggleView();
   };
 
@@ -51,8 +51,8 @@ export default function App({ palate, addPalate, toggleView }) {
         {hasExtractedColors ? (
           <input
             type="submit"
-            onClick={handleSavePalate}
-            value="Save Palate"
+            onClick={handleSavepalette}
+            value="Save palette"
           ></input>
         ) : null}
       </form>
