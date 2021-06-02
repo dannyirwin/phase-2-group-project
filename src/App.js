@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
 
-function App() {
+import MainCard from "./components/MainCard";
+
+import "./App.css";
+
+const tempPalate = {
+  colors: [],
+  imageUrl: "https://i.imgur.com/bTqsPlA.jpg"
+};
+
+const tempUser = {
+  id: 1,
+  palates: [tempPalate, tempPalate],
+  username: "Dirwin"
+};
+
+export default function App() {
+  //const [user, setUser] = useState(tempUser);
+
+  const [palates, setPalates] = useState([tempPalate]);
+
+  /*   const addPalateToUser = palate => {
+    const newUserInfo = { ...user };
+    newUserInfo.palates = [...newUserInfo.palates, palate];
+    setUser(newUserInfo);
+  }; */
+
+  const addPalate = palate => {
+    console.log("setting palates", palate);
+    setPalates([...palates, palate]);
+  };
+
+  useEffect(() => {}, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MainCard palate={palates[0]} addPalate={addPalate} />
     </div>
   );
 }
-
-export default App;
