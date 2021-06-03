@@ -71,6 +71,30 @@
       ],
       "imageUrl": "https://i.imgur.com/2nCt3Sb.jpg",
       "id": 8
+    },
+    {
+      "colors": [
+        "#2d6585",
+        "#9bc5dd",
+        "#042236",
+        "#707291",
+        "#c5bacf",
+        "#33465d"
+      ],
+      "imageUrl": "https://i.imgur.com/sKV54PO.jpg",
+      "id": 9
+    },
+    {
+      "colors": [
+        "#4c6ca4",
+        "#aac4ec",
+        "#60642e",
+        "#5c7aa7",
+        "#acbed3",
+        "#38425b"
+      ],
+      "imageUrl": "https://i.imgur.com/DZCOE9f.png",
+      "id": 10
     }
   ]
 }

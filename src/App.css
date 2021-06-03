@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
 
 :root {
-  --color1: rgb(0, 0, 0);
-  --color2: #fff;
-  --color3: #fff;
-  --color4: #fff;
+  --color1: white;
+  --color2: black;
+  --color3: black;
+  --color4: white;
   --color5: #fff;
   --color6: #fff;
 
@@ -13,7 +13,7 @@
 
 .App {
   font-family: var(--main-font);
-  background: linear-gradient(black 40%, var(--color1));
+  background: black;
   width: 100vw;
   height: 100vh;
   max-height: 100%;
@@ -28,34 +28,63 @@
   display: flex;
   flex-direction: column;
   max-width: 700px;
+  margin: auto;
+  padding: 3em;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mainCard-button {
+  margin: 2em 5em;
+  padding: 1em;
+}
+
+input[type="url"] {
+  background: rgba(255, 255, 255, 0.7);
+  color: black;
+  border: none;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .ColorSample {
   width: 100%;
   height: 100%;
+  height: 100px;
 }
 
 .GalleryContainer {
   display: flex;
   flex-direction: column;
-  max-height: 100%;
+  align-content: center;
+  width: 100%;
+  height: 100%;
   overflow-y: scroll;
 }
 
+.gallery-background {
+  margin: 3em auto;
+  max-width: 1000px;
+  padding: 3em;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
 .GalleryCard {
-  margin: 3.5em;
+  margin: 3.5em auto;
   display: flex;
   flex-direction: row;
   height: 100px;
-  width: 810px;
 }
 
 .GalleryCard > .colors-container {
   margin-left: auto;
   width: 600px;
   justify-self: flex-end;
-  margin-right: 1em ;
-  
+  margin-right: 1em;
+  box-shadow: 1px 1px 1px var(--color1);
 }
 
 .gallery-image-container {
@@ -66,6 +95,7 @@
 .gallery-image {
   max-height: 100%;
   margin: auto;
+  box-shadow: 1px 1px 1px var(--color1);
 }
 
 .card {
@@ -79,34 +109,112 @@
 }
 
 .color-sample-details {
+  display: none;
+  background: rgba(255, 255, 255, 0.5);
+  color: black;
+}
+.color-sample-details:hover {
+  display: block;
   background: rgba(255, 255, 255, 0.5);
   color: black;
 }
 
-button {
+button,
+input[type="submit"] {
   height: 100%;
   margin: 2px;
   border: none;
-  background-color: rgba(255, 255, 255, 0.5);
   font-weight: 700;
-  border: 5px solid rgba(255, 255, 255, 0.5);
-  
-  /* box-shadow: 1px 1px 1px var(--color2); */
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 1px 1px 1px var(--color1);
+  color: white;
+}
+
+button:hover {
+  box-shadow: 1px 1px 1px var(--color3);
 }
 
 .new-palette-button {
+  padding: 20px 70px;
   font-size: 1.5em;
-  max-height: 50px;
   margin: auto;
   margin-bottom: 5em;
-  padding: 30px;
+  text-align: center;
+  text-justify: center;
 }
 
-button:first-of-type {
-  border-left: 8px var(--color2) solid ;
+.App::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(var(--color1), var(--color2));
+  clip-path: circle(30% at left 10%);
+  z-index: -2;
 }
 
-button:nth-of-type(2) {
-  border-left: 8px var(--color5) solid ;
+.App::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(var(--color3), var(--color4));
+  clip-path: circle(20% at right 80%);
+  z-index: -2;
 }
 
+.icon {
+  width: 20px;
+}
+
+.lines {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-75deg);
+}
+
+.line {
+  width: 100%;
+  height: 10px;
+  background: red;
+  margin: 10px;
+}
+
+.line:nth-child(1) {
+  background: linear-gradient(45deg, var(--color1), var(--color2));
+}
+
+.line:nth-child(2) {
+  background: linear-gradient(45deg, var(--color3), var(--color4));
+}
+
+.line:nth-child(3) {
+  height: 5px;
+  margin-top: 100px;
+  margin-bottom: 0px;
+  background: linear-gradient(45deg, var(--color3), var(--color6));
+}
+
+.line:nth-child(4) {
+  height: 5px;
+  margin-top: 5px;
+  background: linear-gradient(45deg, var(--color5), var(--color6));
+}
+
+form {
+  height: 100%;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
