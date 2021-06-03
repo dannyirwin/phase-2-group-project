@@ -28,6 +28,7 @@
   display: flex;
   flex-direction: column;
   max-width: 700px;
+  margin: 2em;
 }
 
 .ColorSample {
@@ -35,7 +36,12 @@
   height: 100%;
 }
 
+/* ################################changes on gallerCaontainer as well ##################### */
+
 .GalleryContainer {
+  padding: 2em;
+  margin: 2em;
+  background-color: rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
   max-height: 100%;
@@ -54,16 +60,23 @@
   margin-left: auto;
   width: 600px;
   justify-self: flex-end;
-  margin-right: 1em ;
-  
+  margin-right: 1em;
 }
 
 .gallery-image-container {
   height: 100%;
   width: 200px;
+  
 }
 
+/*  #################changed image-gallery background ##################*/
+
+
 .gallery-image {
+  
+  border: thick rgb(255, 255, 255, 0.4);
+  border-width: thick;
+  position: relative;
   max-height: 100%;
   margin: auto;
 }
@@ -73,6 +86,7 @@
 }
 
 .colors-container {
+ 
   display: flex;
   flex-direction: row;
   height: 100px;
@@ -83,7 +97,7 @@
   color: black;
 }
 
-button {
+/* button {
   height: 100%;
   margin: 2px;
   border: none;
@@ -92,21 +106,78 @@ button {
   border: 5px solid rgba(255, 255, 255, 0.5);
   
   /* box-shadow: 1px 1px 1px var(--color2); */
-}
+/* } */
+*/ 
 
-.new-palette-button {
-  font-size: 1.5em;
-  max-height: 50px;
-  margin: auto;
-  margin-bottom: 5em;
-  padding: 30px;
-}
 
-button:first-of-type {
+/* button:first-of-type {
   border-left: 8px var(--color2) solid ;
 }
 
 button:nth-of-type(2) {
   border-left: 8px var(--color5) solid ;
+} */
+
+/* ################### brandons doodling ##################### */
+
+.main-card-image {
+  padding: 10px;
+  margin: 20px;
+}
+
+.new-palette-button {
+  font-size: 1.5em;
+  max-height: 60px;
+  margin: auto;
+  margin-bottom: 8em;
+  padding: 19px;
+  box-shadow: 0px 10px 25px var(--color1);
+}
+
+
+button {
+  border: none;
+  margin: .5em;
+  background-color: rgb(255, 255, 255, 0.4);
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 12px 0 8px;
+  text-decoration: none;
+  transition: 0.2s;
+  box-shadow: 0px 0px 10px .2px var(--color1);
+}
+
+button:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 8px;
+  top: 100%;
+  left: 0;
+  border-radius: 1px;
+  background: var(--color5);
+  transition: 0.4s;
+}
+
+button:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 7px;
+  top: 0;
+  left: 0;
+  border-radius: 1px;
+  background: var(--color5);
+  transition: 0.4s;
+}
+
+button:hover:before {
+  top: -webkit-calc(100% - 50px);
+  top: calc(100% - 20%);
+}
+
+button:hover:after {
+  top: 20%;
 }
 

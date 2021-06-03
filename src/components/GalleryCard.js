@@ -22,7 +22,7 @@ export default function GalleryCard({
         <img
           className="gallery-image"
           src={imageUrl}
-          alt="Color Extraction BULLSHIT"
+          alt="Color Extraction"
         ></img>
       </div>
       <div className="colors-container">{showColorSamples()}</div>

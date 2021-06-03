@@ -34,10 +34,10 @@ export default function App({ palette, addPalette, changeTheme, toggleView }) {
   return (
     <div className="MainCard card">
       <ColorExtractor getColors={getColors}>
-        <img
+        <img className="main-card-image"
           src={imageUrl}
           style={{ width: 700, height: 500 }}
-          alt="the same bullshit"
+          alt="alt"
         />
       </ColorExtractor>
       <form onSubmit={handleExtractColors}>
