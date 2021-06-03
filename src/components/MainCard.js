@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ColorExtractor } from "react-color-extractor";
 import ColorSample from "./ColorSample";
 
-export default function App({ palette, addpalette, toggleView }) {
+export default function App({ palette, addPalette, changeTheme, toggleView }) {
   const [colors, setColors] = useState(palette.colors || []);
   const [imageUrl, setImageUrl] = useState(palette.imageUrl || "noUrl");
 
@@ -11,23 +11,23 @@ export default function App({ palette, addpalette, toggleView }) {
 
   const renderColorSamples = () => {
     return colors.map((color, id) => {
-      return <ColorSample color={color} />;
+      return <ColorSample color={color} key={id} />;
     });
   };
 
-  const getColors = newColors => setColors(newColors);
+  const getColors = (newColors) => setColors(newColors);
 
-  const handleExtractColors = event => {
+  const handleExtractColors = (event) => {
     event.preventDefault();
     const newUrl = new FormData(event.target).get("imageUrl");
     setImageUrl(newUrl);
-    console.log("extracting");
     setHasExtractedColors(true);
+    changeTheme(event, colors);
   };
 
-  const handleSavepalette = event => {
+  const handleSavePalette = (event) => {
     console.log("Adding palette", imageUrl);
-    addpalette({ colors, imageUrl });
+    addPalette({ colors, imageUrl });
     toggleView();
   };
 
@@ -51,7 +51,7 @@ export default function App({ palette, addpalette, toggleView }) {
         {hasExtractedColors ? (
           <input
             type="submit"
-            onClick={handleSavepalette}
+            onClick={handleSavePalette}
             value="Save palette"
           ></input>
         ) : null}
