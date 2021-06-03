@@ -16,10 +16,10 @@ export default function GalleryContainer({ palettes, toggleView, changeTheme, re
   };
 
   return (
-    <div className="Gallery">
+    <div className="GalleryContainer">
       <h1>Gallery</h1>
       {showGalleryCards()}
-      <button onClick={() => toggleView("newPalette")}>
+      <button className="new-palette-button" onClick={() => toggleView("newPalette")}>
         {palettes.length === 0 ? "Add palette" : "Add New palette"}
       </button>
     </div>

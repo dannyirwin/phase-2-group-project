@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+
 :root {
   --color1: rgb(0, 0, 0);
   --color2: #fff;
@@ -5,15 +7,21 @@
   --color4: #fff;
   --color5: #fff;
   --color6: #fff;
+
+  --main-font: "PT Sans Narrow", sans-serif;
 }
 
 .App {
-  background-color: var(--color1);
-  width: 100%;
-  height: 100%;
+  font-family: var(--main-font);
+  background: linear-gradient(black 40%, var(--color1));
+  width: 100vw;
+  height: 100vh;
+  max-height: 100%;
+  max-width: 100vw;
   display: flex;
   justify-content: center;
-  margin-top: 2em;
+  margin-top: auto;
+  position: fixed;
 }
 
 .MainCard {
@@ -27,7 +35,15 @@
   height: 100%;
 }
 
+.GalleryContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
 .GalleryCard {
+  margin: 3.5em;
   display: flex;
   flex-direction: row;
   height: 100px;
@@ -38,6 +54,13 @@
   margin-left: auto;
   width: 600px;
   justify-self: flex-end;
+  margin-right: 1em ;
+  
+}
+
+.gallery-image-container {
+  height: 100%;
+  width: 200px;
 }
 
 .gallery-image {
@@ -59,3 +82,31 @@
   background: rgba(255, 255, 255, 0.5);
   color: black;
 }
+
+button {
+  height: 100%;
+  margin: 2px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  
+  /* box-shadow: 1px 1px 1px var(--color2); */
+}
+
+.new-palette-button {
+  font-size: 1.5em;
+  max-height: 50px;
+  margin: auto;
+  margin-bottom: 5em;
+  padding: 30px;
+}
+
+button:first-of-type {
+  border-left: 8px var(--color2) solid ;
+}
+
+button:nth-of-type(2) {
+  border-left: 8px var(--color5) solid ;
+}
+
