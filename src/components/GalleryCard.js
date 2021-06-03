@@ -1,7 +1,7 @@
 import React from "react";
 import ColorSample from "./ColorSample";
 
-export default function GalleryCard({ palette, toggleView }) {
+export default function GalleryCard({ palette, toggleView, removePalette }) {
   const { id, colors, imageUrl } = palette;
 
   const showColorSamples = () => {
@@ -18,6 +18,7 @@ export default function GalleryCard({ palette, toggleView }) {
         alt="Color Extraction BULLSHIT"
       ></img>
       <div className="colors-container">{showColorSamples()}</div>
+      <button onClick={(event) => removePalette(event, id)}>X</button>
     </div>
   );
 }
