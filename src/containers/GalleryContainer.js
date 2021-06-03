@@ -2,7 +2,7 @@ import React from "react";
 
 import GalleryCard from "../components/GalleryCard";
 
-export default function GalleryContainer({ palettes, toggleView, removePalette }) {
+export default function GalleryContainer({ palettes, toggleView, changeTheme, removePalette }) {
   const showGalleryCards = () => {
     return palettes.map((palette) => (
       <GalleryCard
@@ -10,6 +10,7 @@ export default function GalleryContainer({ palettes, toggleView, removePalette }
         palette={palette}
         toggleView={toggleView}
         removePalette={removePalette}
+        changeTheme={changeTheme}
       />
     ));
   };

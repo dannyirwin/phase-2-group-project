@@ -59,6 +59,18 @@
       ],
       "imageUrl": "https://i.imgur.com/QyspieK.jpg",
       "id": 5
+    },
+    {
+      "colors": [
+        "#bc8b4a",
+        "#cbb18a",
+        "#0b4940",
+        "#a4544c",
+        "#c7c1b3",
+        "#2c4941"
+      ],
+      "imageUrl": "https://i.imgur.com/RUa94dS.jpg",
+      "id": 6
     }
   ]
 }

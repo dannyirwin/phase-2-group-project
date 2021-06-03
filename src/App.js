@@ -15,6 +15,7 @@ const palettesUrl = "http://localhost:3000/palettes/";
 export default function App() {
   const [palettes, setPalettes] = useState([]);
   const [mainPalette, setMainPalette] = useState(null);
+  const [theme, setTheme] = useState(newPalette.colors);
 
   const addPalette = (palette) => {
     console.log("setting palettes", palette);
@@ -55,6 +56,14 @@ export default function App() {
     fetch(palettesUrl + id, options);
   };
 
+  const changeTheme = (event, colors) => {
+    event.stopPropagation();
+    setTheme(colors);
+    colors.forEach((color, i) => {
+      document.documentElement.style.setProperty(`--color${i + 1}`, color);
+    });
+  };
+
   const removePalette = (event, id) => {
     event.stopPropagation();
     const newPalettes = palettes.filter((palette) => {
@@ -62,7 +71,7 @@ export default function App() {
     });
     setPalettes(newPalettes);
 
-    deletePaletteFromDB(id)
+    deletePaletteFromDB(id);
   };
 
   useEffect(() => {
@@ -76,12 +85,14 @@ export default function App() {
           palette={mainPalette || newPalette}
           toggleView={toggleView}
           addPalette={addPalette}
+          changeTheme={changeTheme}
         />
       ) : (
         <GalleryContainer
           palettes={palettes}
           toggleView={toggleView}
           removePalette={removePalette}
+          changeTheme={changeTheme}
         />
       )}
     </div>

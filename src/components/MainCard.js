@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ColorExtractor } from "react-color-extractor";
 import ColorSample from "./ColorSample";
 
-export default function App({ palette, addPalette, toggleView }) {
+export default function App({ palette, addPalette, changeTheme, toggleView }) {
   const [colors, setColors] = useState(palette.colors || []);
   const [imageUrl, setImageUrl] = useState(palette.imageUrl || "noUrl");
 
@@ -11,7 +11,7 @@ export default function App({ palette, addPalette, toggleView }) {
 
   const renderColorSamples = () => {
     return colors.map((color, id) => {
-      return <ColorSample color={color} />;
+      return <ColorSample color={color} key={id} />;
     });
   };
 
@@ -22,6 +22,7 @@ export default function App({ palette, addPalette, toggleView }) {
     const newUrl = new FormData(event.target).get("imageUrl");
     setImageUrl(newUrl);
     setHasExtractedColors(true);
+    changeTheme(event, colors);
   };
 
   const handleSavePalette = (event) => {
