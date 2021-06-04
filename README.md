@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# SampL
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Find your color palette from any image.
 
-## Available Scripts
+## Summary
 
-In the project directory, you can run:
+SampL is a design tool to help designers and developers extract and view vibrant
+color palettes from images. The user is able to input an image url from the web,
+generate a color palette, and watch the page's theme shift to match. It allows
+the user to see their palettes side by side and get an idea how their palette
+might affect the page as a whole.
 
-### `yarn start`
+We built this App as a solution to a challenge we face as new developers quite
+frequently. We found ourselves building quite a few small apps here and there to
+put to practice all that we've been learning. While the purpose of most of these
+projects is usually to practice some new technology, it is always important to
+keep in mind the user's experience, an huge part of which is the visual design
+of the app. SampL can be used to take some design pressure off of these projects
+by providing an easy way to get a baseline palette. Just find an image in the
+internet that captures the vibe of your user experience and extract the colors.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src="https://assets-global.website-files.com/5d9bc5d562ffc2869b470941/5e1f8bd1dc3c511ea5a28a56_icon-rect-tech.png" alt="React Logo" height="126"><img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Logo" height="126">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Javascript Logo" height="126">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/CSS.3.svg/730px-CSS.3.svg.png" alt="CSS Logo" height="126">
 
-### `yarn test`
+## Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone(`git clone`) this repo to your local machine.
+Navigate(`cd <subdirectory name>`) into the newly created directory.
 
-### `yarn build`
+### Set up your backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This app will work as intended without setting up a backend. If you don't need
+to worry about keeping persistent data, you can skip this ste.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The save color palette data is stored in the `db.json` file and uses jason-serve
+as a simple backend. To use this file, if you don't already have json-server
+installed, in your terminal run `npm install -g json-server`. Then run
+`json-server --watch db.json`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Set up your front-end
 
-### `yarn eject`
+Open a new tab in your terminal and navigate into the directory where the game
+files live. First run `npm install` to install the node dependencies. Then run
+`npm-start` to view the page.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Features
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Code Snippets
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+We treated this app as a fantastic way of practicing writing clean code. We
+limited repetition by refactoring our functions to operate differently depending
+on the context in which we used them. That way, we could pass around one
+function to multiple components which needed to perform similar but not
+identical tasks. This way, if we ever need to make a change to a function, it
+can be done in one place.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```javascript
+const toggleView = (palette = null) => {
+  palette === "newPalette"
+    ? setMainPalette(newPalette)
+    : setMainPalette(palette);
+};
 
-## Learn More
+const removePalette = (event, id) => {
+  event.stopPropagation();
+  const newPalettes = palettes.filter(palette => {
+    return palette.id !== id;
+  });
+  setPalettes(newPalettes);
+  deletePaletteFromDB(id);
+};
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+const changeTheme = (event, colors) => {
+  if (event) {
+    event.stopPropagation();
+  }
+  setTheme(colors);
+  colors.forEach((color, i) => {
+    document.documentElement.style.setProperty(`--color${i + 1}`, color);
+  });
+};
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Feature Wishlist
 
-### Code Splitting
+- User can choose how many palettes to generate.
+- User can add or remove colors from a palette manually.
+- Export palettes for embedding.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Reach out
 
-### Analyzing the Bundle Size
+#### Want to get get in touch or see more of our work?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Brandon](https://github.com/brandonefields) |
+[Danny](https://github.com/dannyirwin)
