@@ -38,6 +38,21 @@
   padding: 1em;
 }
 
+.colorExtractor-container {
+  height: 100%;
+  width: 100%;
+  max-height: 500px;
+  max-width: 700px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.colorExtractor-image {
+  max-height: 500px;
+  max-width: 700px;
+}
+
 input[type="url"] {
   background: rgba(255, 255, 255, 0.7);
   color: black;
@@ -46,12 +61,6 @@ input[type="url"] {
 
 ::placeholder {
   color: rgba(0, 0, 0, 0.7);
-}
-
-.ColorSample {
-  width: 100%;
-  height: 100%;
-  height: 100px;
 }
 
 .GalleryContainer {
@@ -67,6 +76,7 @@ input[type="url"] {
   margin: 3em auto;
   max-width: 1000px;
   padding: 3em;
+  /*  background: linear-gradient(45deg, var(--color1), var(--color4)); */
   background: rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
@@ -108,15 +118,36 @@ input[type="url"] {
   height: 100px;
 }
 
-.color-sample-details {
-  display: none;
-  background: rgba(255, 255, 255, 0.5);
-  color: black;
+.ColorSample {
+  height: 100px;
+  width: 100px;
 }
-.color-sample-details:hover {
-  display: block;
+
+.color-sample-display {
+  height: 100%;
+}
+
+.color-sample-details > p {
   background: rgba(255, 255, 255, 0.5);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.color-sample-details {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+  transform: translateY(30px);
+}
+
+.color-sample-details:hover {
+  opacity: 1;
   color: black;
+  transition: 1s;
+  transform: translateY(0px);
 }
 
 button,

@@ -6,8 +6,8 @@ import "./App.css";
 import GalleryContainer from "./containers/GalleryContainer";
 
 const newPalette = {
-  colors: ["#f5441a", "#fbd273", "#12176e", "#b24f94", "#d3a7d7", "#4c3f25"],
-  imageUrl: "https://i.imgur.com/bTqsPlA.jpg"
+  colors: ["#7f7f7f", "#bcbcbc", "#424242", "#888888", "#bcbcbc", "#444444"],
+  imageUrl: "https://m.media-amazon.com/images/I/61dvguSUsaL._AC_SL1500_.jpg"
 };
 
 const palettesUrl = "http://localhost:3000/palettes/";
@@ -57,7 +57,9 @@ export default function App() {
   };
 
   const changeTheme = (event, colors) => {
-    event.stopPropagation();
+    if (event) {
+      event.stopPropagation();
+    }
     setTheme(colors);
     colors.forEach((color, i) => {
       document.documentElement.style.setProperty(`--color${i + 1}`, color);

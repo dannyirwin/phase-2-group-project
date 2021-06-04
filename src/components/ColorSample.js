@@ -2,13 +2,17 @@ import React from "react";
 
 export default function ColorSample({ color, id }) {
   return (
-    <div
-      className="ColorSample"
-      style={{
-        backgroundColor: color
-      }}
-    >
-      <p className="color-sample-details">{color}</p>
+    <div className="ColorSample">
+      <div
+        className="color-sample-display"
+        style={{
+          backgroundColor: color
+        }}
+      >
+        <div className="color-sample-details">
+          <p>{color}</p>
+        </div>
+      </div>
     </div>
   );
 }

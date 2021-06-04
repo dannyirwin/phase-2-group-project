@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { ColorExtractor } from "react-color-extractor";
 import ColorSample from "./ColorSample";
@@ -22,24 +22,29 @@ export default function App({ palette, addPalette, changeTheme, toggleView }) {
     const newUrl = new FormData(event.target).get("imageUrl");
     setImageUrl(newUrl);
     setHasExtractedColors(true);
-    changeTheme(event, colors);
   };
 
   const handleSavePalette = event => {
-    console.log("Adding palette", imageUrl);
     addPalette({ colors, imageUrl });
     toggleView();
   };
 
+  useEffect(() => {
+    changeTheme(null, colors);
+  }, [colors]);
+
   return (
     <div className="MainCard card">
-      <ColorExtractor getColors={getColors}>
-        <img
-          src={imageUrl}
-          style={{ width: 700, height: 500 }}
-          alt="the same bullshit"
-        />
-      </ColorExtractor>
+      <div className="colorExtractor-container">
+        <ColorExtractor getColors={getColors}>
+          <img
+            className="colorExtractor-image"
+            src={imageUrl}
+            /*  style={{ width: 700, height: 500 }} */
+            alt="Display of url"
+          />
+        </ColorExtractor>
+      </div>
       <form onSubmit={handleExtractColors}>
         <input
           type="url"
