@@ -2,75 +2,111 @@
   "palettes": [
     {
       "colors": [
-        "#f5441a",
-        "#fbd273",
-        "#12176e",
-        "#b24f94",
-        "#d3a7d7",
-        "#4c3f25"
+        "#ee2054",
+        "#ec94b1",
+        "#7a0a2d",
+        "#a76356",
+        "#b4d4ab",
+        "#426952"
       ],
-      "imageUrl": "https://i.imgur.com/bTqsPlA.jpg",
+      "imageUrl": "https://i.imgur.com/cRHbnot.jpg",
       "id": 1
     },
     {
       "colors": [
-        "#d2ca40",
-        "#92c7f5",
-        "#936d41",
-        "#5b879d",
-        "#cac3a9",
-        "#6d434c"
+        "#e3432a",
+        "#ded78d",
+        "#6f1d16",
+        "#98845b",
+        "#83c198",
+        "#2e5052"
       ],
-      "imageUrl": "https://i.imgur.com/8PycpVP.jpg",
+      "imageUrl": "https://i.imgur.com/rBkbXS3.jpeg",
       "id": 2
     },
     {
       "colors": [
-        "#50c1b0",
-        "#74e4d0",
-        "#126042",
-        "#7e9b58",
-        "#85c8b1",
-        "#336537"
+        "#913bd4",
+        "#e490ac",
+        "#3c108e",
+        "#a4745c",
+        "#7b1d3c",
+        "#552b5f"
       ],
-      "imageUrl": "https://i.imgur.com/MvSJVEl.jpeg",
+      "imageUrl": "https://i.imgur.com/FiJzbYc.jpeg",
+      "id": 3
+    },
+    {
+      "colors": [
+        "#9e744a",
+        "#ddd29e",
+        "#573e1b",
+        "#8c6c60",
+        "#c4a4cc",
+        "#543428"
+      ],
+      "imageUrl": "https://i.imgur.com/XoeoVdm.jpeg",
       "id": 4
     },
     {
       "colors": [
-        "#bc8b4a",
-        "#cbb18a",
-        "#0b4940",
-        "#a4544c",
-        "#c7c1b3",
-        "#2c4941"
+        "#bf6f37",
+        "#d19551",
+        "#5b2913",
+        "#af8f76",
+        "#b4c2c8",
+        "#2b4d5f"
       ],
-      "imageUrl": "https://i.imgur.com/RUa94dS.jpg",
+      "imageUrl": "https://i.imgur.com/Wv5Tcmu.jpeg",
+      "id": 5
+    },
+    {
+      "colors": [
+        "#c2d339",
+        "#e2f1c8",
+        "#435a15",
+        "#817c6e",
+        "#cacac5",
+        "#5a522c"
+      ],
+      "imageUrl": "https://i.imgur.com/C75L6tU.jpg",
       "id": 6
     },
     {
       "colors": [
-        "#9ba04c",
-        "#a7dafb",
-        "#4f671c",
-        "#988672",
-        "#c8bb91",
-        "#483228"
+        "#2d6585",
+        "#9bc5dd",
+        "#042236",
+        "#707291",
+        "#c5bacf",
+        "#33465d"
       ],
-      "imageUrl": "https://i.imgur.com/2M8Y2uP.jpg",
+      "imageUrl": "https://i.imgur.com/sKV54PO.jpg",
       "id": 7
     },
     {
       "colors": [
-        "#e8a06a",
-        "#deaaa2",
-        "#245c86",
-        "#907566",
-        "#c2aeb0",
-        "#2f3c4a"
+        "#c26f40",
+        "#e2e7a2",
+        "#164b68",
+        "#a4535d",
+        "#95c9ae",
+        "#1b2434"
       ],
-      "imageUrl": "https://i.imgur.com/2nCt3Sb.jpg",
+      "imageUrl": "https://i.imgur.com/vKmmQBU.jpeg",
       "id": 8
+    },
+    {
+      "colors": [
+        "#d35008",
+        "#fcc44c",
+        "#068883",
+        "#4d75a7",
+        "#a5b6cd",
+        "#252222"
+      ],
+      "imageUrl": "https://i.imgur.com/x4kanJf.jpg",
+      "id": 9
     }
   ]
 }

@@ -6,8 +6,8 @@ import "./App.css";
 import GalleryContainer from "./containers/GalleryContainer";
 
 const newPalette = {
-  colors: ["#f5441a", "#fbd273", "#12176e", "#b24f94", "#d3a7d7", "#4c3f25"],
-  imageUrl: "https://i.imgur.com/bTqsPlA.jpg",
+  colors: ["#7f7f7f", "#bcbcbc", "#424242", "#888888", "#bcbcbc", "#444444"],
+  imageUrl: "https://m.media-amazon.com/images/I/61dvguSUsaL._AC_SL1500_.jpg"
 };
 
 const palettesUrl = "http://localhost:3000/palettes/";
@@ -17,7 +17,7 @@ export default function App() {
   const [mainPalette, setMainPalette] = useState(null);
   const [theme, setTheme] = useState(newPalette.colors);
 
-  const addPalette = (palette) => {
+  const addPalette = palette => {
     console.log("setting palettes", palette);
     setMainPalette(palette);
     savePalettesToDB(palette);
@@ -31,33 +31,35 @@ export default function App() {
 
   const getPalettesFromDB = () => {
     fetch(palettesUrl)
-      .then((res) => res.json())
-      .then((palettes) => setPalettes(palettes));
+      .then(res => res.json())
+      .then(palettes => setPalettes(palettes));
   };
 
-  const savePalettesToDB = (palette) => {
+  const savePalettesToDB = palette => {
     const options = {
       method: "POST",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify(palette),
+      body: JSON.stringify(palette)
     };
     fetch(palettesUrl, options)
-      .then((res) => res.json())
-      .then((palette) => setPalettes([...palettes, palette]));
+      .then(res => res.json())
+      .then(palette => setPalettes([...palettes, palette]));
   };
 
-  const deletePaletteFromDB = (id) => {
+  const deletePaletteFromDB = id => {
     const options = {
-      method: "DELETE",
+      method: "DELETE"
     };
     fetch(palettesUrl + id, options);
   };
 
   const changeTheme = (event, colors) => {
-    event.stopPropagation();
+    if (event) {
+      event.stopPropagation();
+    }
     setTheme(colors);
     colors.forEach((color, i) => {
       document.documentElement.style.setProperty(`--color${i + 1}`, color);
@@ -66,7 +68,7 @@ export default function App() {
 
   const removePalette = (event, id) => {
     event.stopPropagation();
-    const newPalettes = palettes.filter((palette) => {
+    const newPalettes = palettes.filter(palette => {
       return palette.id !== id;
     });
     setPalettes(newPalettes);
@@ -95,6 +97,12 @@ export default function App() {
           changeTheme={changeTheme}
         />
       )}
+      <div className="lines">
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+      </div>
     </div>
   );
 }

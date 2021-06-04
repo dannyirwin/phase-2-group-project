@@ -2,9 +2,14 @@ import React from "react";
 
 import GalleryCard from "../components/GalleryCard";
 
-export default function GalleryContainer({ palettes, toggleView, changeTheme, removePalette }) {
+export default function GalleryContainer({
+  palettes,
+  toggleView,
+  changeTheme,
+  removePalette
+}) {
   const showGalleryCards = () => {
-    return palettes.map((palette) => (
+    return palettes.map(palette => (
       <GalleryCard
         key={palette.id}
         palette={palette}
@@ -17,11 +22,15 @@ export default function GalleryContainer({ palettes, toggleView, changeTheme, re
 
   return (
     <div className="GalleryContainer">
-      <h1>Gallery</h1>
-      {showGalleryCards()}
-      <button className="new-palette-button" onClick={() => toggleView("newPalette")}>
-        {palettes.length === 0 ? "Add palette" : "Add New palette"}
-      </button>
+      <div className="gallery-background">
+        {showGalleryCards()}
+        <button
+          className="new-palette-button"
+          onClick={() => toggleView("newPalette")}
+        >
+          {palettes.length === 0 ? "Add palette" : "Add New palette"}
+        </button>
+      </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ export default function GalleryCard({
   palette,
   toggleView,
   changeTheme,
-  removePalette,
+  removePalette
 }) {
   const { id, colors, imageUrl } = palette;
 
@@ -22,15 +22,15 @@ export default function GalleryCard({
         <img
           className="gallery-image"
           src={imageUrl}
-          alt="Color Extraction BULLSHIT"
+          alt="Display of url"
         ></img>
       </div>
       <div className="colors-container">{showColorSamples()}</div>
-      <button onClick={(event) => changeTheme(event, colors)}>
-        <ColorPaletteOutline className="icon" />{" "}
+      <button onClick={event => changeTheme(event, colors)}>
+        <ColorPaletteOutline className="icon" color="white" />
       </button>
-      <button onClick={(event) => removePalette(event, id)}>
-        <TrashBinOutline className="icon" />
+      <button onClick={event => removePalette(event, id)}>
+        <TrashBinOutline className="icon" color="white" />
       </button>
     </div>
   );
