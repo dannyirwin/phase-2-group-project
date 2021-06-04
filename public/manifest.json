@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "SampL",
+  "name": "Find a picture, find a color palette",
   "icons": [
     {
       "src": "favicon.ico",
