@@ -28,7 +28,7 @@ export default function GalleryContainer({
           className="new-palette-button"
           onClick={() => toggleView("newPalette")}
         >
-          {palettes.length === 0 ? "Add palette" : "Add New palette"}
+          {palettes.length === 0 ? "Create a Palette" : "Add New palette"}
         </button>
       </div>
     </div>
