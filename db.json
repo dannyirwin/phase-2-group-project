@@ -1,3 +1,64 @@
 {
-  "palettes": []
+  "palettes": [
+    {
+      "colors": [
+        "#ee2054",
+        "#ec94b1",
+        "#7a0a2d",
+        "#a76356",
+        "#b4d4ab",
+        "#426952"
+      ],
+      "imageUrl": "https://i.imgur.com/cRHbnot.jpg",
+      "id": 1
+    },
+    {
+      "colors": [
+        "#e3432a",
+        "#ded78d",
+        "#6f1d16",
+        "#98845b",
+        "#83c198",
+        "#2e5052"
+      ],
+      "imageUrl": "https://i.imgur.com/rBkbXS3.jpeg",
+      "id": 2
+    },
+    {
+      "colors": [
+        "#913bd4",
+        "#e490ac",
+        "#3c108e",
+        "#a4745c",
+        "#7b1d3c",
+        "#552b5f"
+      ],
+      "imageUrl": "https://i.imgur.com/FiJzbYc.jpeg",
+      "id": 3
+    },
+    {
+      "colors": [
+        "#9e744a",
+        "#ddd29e",
+        "#573e1b",
+        "#8c6c60",
+        "#c4a4cc",
+        "#543428"
+      ],
+      "imageUrl": "https://i.imgur.com/XoeoVdm.jpeg",
+      "id": 4
+    },
+    {
+      "colors": [
+        "#bf6f37",
+        "#d19551",
+        "#5b2913",
+        "#af8f76",
+        "#b4c2c8",
+        "#2b4d5f"
+      ],
+      "imageUrl": "https://i.imgur.com/Wv5Tcmu.jpeg",
+      "id": 5
+    }
+  ]
 }

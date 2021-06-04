@@ -35,7 +35,7 @@ export default function App({ palette, addPalette, changeTheme, toggleView }) {
 
   return (
     <div className="MainCard card">
-      <div className="colorExtractor-container">
+      <a className="colorExtractor-container" href={imageUrl} target="_blank">
         <ColorExtractor getColors={getColors}>
           <img
             className="colorExtractor-image"
@@ -44,12 +44,12 @@ export default function App({ palette, addPalette, changeTheme, toggleView }) {
             alt="Display of url"
           />
         </ColorExtractor>
-      </div>
+      </a>
       <form onSubmit={handleExtractColors}>
         <input
           type="url"
           name="imageUrl"
-          placeholder="Image Url you'd like to sample"
+          placeholder="Source image Url"
           required
         ></input>
         <input
