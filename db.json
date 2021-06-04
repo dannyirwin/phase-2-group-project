@@ -59,6 +59,54 @@
       ],
       "imageUrl": "https://i.imgur.com/Wv5Tcmu.jpeg",
       "id": 5
+    },
+    {
+      "colors": [
+        "#c2d339",
+        "#e2f1c8",
+        "#435a15",
+        "#817c6e",
+        "#cacac5",
+        "#5a522c"
+      ],
+      "imageUrl": "https://i.imgur.com/C75L6tU.jpg",
+      "id": 6
+    },
+    {
+      "colors": [
+        "#2d6585",
+        "#9bc5dd",
+        "#042236",
+        "#707291",
+        "#c5bacf",
+        "#33465d"
+      ],
+      "imageUrl": "https://i.imgur.com/sKV54PO.jpg",
+      "id": 7
+    },
+    {
+      "colors": [
+        "#c26f40",
+        "#e2e7a2",
+        "#164b68",
+        "#a4535d",
+        "#95c9ae",
+        "#1b2434"
+      ],
+      "imageUrl": "https://i.imgur.com/vKmmQBU.jpeg",
+      "id": 8
+    },
+    {
+      "colors": [
+        "#d35008",
+        "#fcc44c",
+        "#068883",
+        "#4d75a7",
+        "#a5b6cd",
+        "#252222"
+      ],
+      "imageUrl": "https://i.imgur.com/x4kanJf.jpg",
+      "id": 9
     }
   ]
 }
