@@ -20,7 +20,6 @@
   max-width: 100vw;
   display: flex;
   justify-content: center;
-  margin-top: auto;
   position: fixed;
 }
 
@@ -55,8 +54,6 @@
 }
 
 .colorExtractor-container {
-  max-height: 500px;
-  max-width: 700px;
   margin-bottom: 1em;
   display: flex;
   align-content: center;
@@ -64,7 +61,7 @@
 }
 
 .colorExtractor-image {
-  max-width: 600px;
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -279,4 +276,73 @@ form {
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .GalleryContainer {
+    padding: 1em;
+  }
+
+  .gallery-background {
+    padding: 2em;
+    max-width: 100%;
+  }
+
+  .new-palette-button {
+    padding: 1em 2em;
+    font-size: 20px;
+  }
+
+  .MainCard {
+    margin: auto;
+    padding: 2em;
+  }
+  .colors-container {
+    justify-self: center;
+    margin: auto;
+    margin-top: 1em;
+  }
+
+  .ColorSample {
+    max-height: 15vw;
+    max-width: 15vw;
+  }
+
+  .colorExtractor-image {
+    max-height: 300px;
+  }
+
+  form {
+    flex-wrap: wrap;
+  }
+
+  form > * {
+    margin: 5px;
+  }
+
+  .gallery-background {
+    max-width: 100%;
+    padding: 2em 0.5em;
+    width: auto;
+  }
+
+  .gallery-image-container {
+    padding-right: 1em;
+    width: 100%;
+    max-height: 30vw;
+  }
+
+  .GalleryCard {
+    max-width: 100%;
+    max-height: 30vw;
+  }
+
+  .GalleryCard > .colors-container {
+    flex-wrap: wrap;
+  }
+
+  .GalleryCard > .colors-container > .ColorSample {
+    max-height: 50%;
+    max-width: 33.333%;
+  }
 }
