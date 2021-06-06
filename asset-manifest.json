@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/phase-2-group-project/static/css/main.5abde236.chunk.css",
+    "main.css": "/phase-2-group-project/static/css/main.7a6c347a.chunk.css",
     "main.js": "/phase-2-group-project/static/js/main.f877c341.chunk.js",
     "main.js.map": "/phase-2-group-project/static/js/main.f877c341.chunk.js.map",
     "runtime-main.js": "/phase-2-group-project/static/js/runtime-main.9134a363.js",
@@ -10,13 +10,13 @@
     "static/js/3.c7e02a67.chunk.js": "/phase-2-group-project/static/js/3.c7e02a67.chunk.js",
     "static/js/3.c7e02a67.chunk.js.map": "/phase-2-group-project/static/js/3.c7e02a67.chunk.js.map",
     "index.html": "/phase-2-group-project/index.html",
-    "static/css/main.5abde236.chunk.css.map": "/phase-2-group-project/static/css/main.5abde236.chunk.css.map",
+    "static/css/main.7a6c347a.chunk.css.map": "/phase-2-group-project/static/css/main.7a6c347a.chunk.css.map",
     "static/js/2.af06da1d.chunk.js.LICENSE.txt": "/phase-2-group-project/static/js/2.af06da1d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9134a363.js",
     "static/js/2.af06da1d.chunk.js",
-    "static/css/main.5abde236.chunk.css",
+    "static/css/main.7a6c347a.chunk.css",
     "static/js/main.f877c341.chunk.js"
   ]
 }
