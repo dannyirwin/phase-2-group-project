@@ -29,7 +29,7 @@ export default function GalleryCard({
       <button onClick={event => changeTheme(event, colors)}>
         <ColorPaletteOutline className="icon" color="white" />
       </button>
-      <button onClick={event => removePalette(event, id)}>
+      <button onClick={event => removePalette(event, palette)}>
         <TrashBinOutline className="icon" color="white" />
       </button>
     </div>

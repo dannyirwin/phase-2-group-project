@@ -6,6 +6,7 @@ import "./App.css";
 import GalleryContainer from "./containers/GalleryContainer";
 
 const newPalette = {
+  isTemplate: true,
   colors: ["#7f7f7f", "#bcbcbc", "#424242", "#888888", "#bcbcbc", "#444444"],
   imageUrl: "https://m.media-amazon.com/images/I/61dvguSUsaL._AC_SL1500_.jpg"
 };
@@ -18,7 +19,6 @@ export default function App() {
   const [theme, setTheme] = useState(newPalette.colors);
 
   const addPalette = palette => {
-    console.log("setting palettes", palette);
     setMainPalette(palette);
     savePalettesToDB(palette);
   };
@@ -36,6 +36,7 @@ export default function App() {
   };
 
   const savePalettesToDB = palette => {
+    setPalettes([...palettes, palette]);
     const options = {
       method: "POST",
       headers: {
@@ -44,9 +45,7 @@ export default function App() {
       },
       body: JSON.stringify(palette)
     };
-    fetch(palettesUrl, options)
-      .then(res => res.json())
-      .then(palette => setPalettes([...palettes, palette]));
+    fetch(palettesUrl, options);
   };
 
   const deletePaletteFromDB = id => {
@@ -66,11 +65,17 @@ export default function App() {
     });
   };
 
-  const removePalette = (event, id) => {
+  const removePalette = (event, palette) => {
     event.stopPropagation();
+    const url = palette.imageUrl;
+    const id = palette.id;
+
+    console.log(id);
+
     const newPalettes = palettes.filter(palette => {
-      return palette.id !== id;
+      return id ? palette.id !== id : palette.imageUrl !== url;
     });
+    console.log(newPalettes);
     setPalettes(newPalettes);
 
     deletePaletteFromDB(id);

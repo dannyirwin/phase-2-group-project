@@ -1,3 +1,16 @@
 {
-  "palettes": []
+  "palettes": [
+    {
+      "colors": [
+        "#c3dd34",
+        "#aee496",
+        "#2b8404",
+        "#90817e",
+        "#afd9aa",
+        "#4f323d"
+      ],
+      "imageUrl": "https://i.imgur.com/bFDWhkK.jpg",
+      "id": 1
+    }
+  ]
 }

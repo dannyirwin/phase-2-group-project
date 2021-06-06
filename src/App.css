@@ -32,7 +32,7 @@
   background-color: rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid var(--color1);
   border-right: 1px solid var(--color1);
-  box-shadow: -10px -10px 90px 20px black;
+  box-shadow: -10px -10px 150px 20px black;
 
   animation: fadeInSlide 0.5s;
 }
@@ -85,6 +85,8 @@ input[type="url"] {
   display: flex;
   flex-direction: column;
   align-content: center;
+  justify-content: center;
+  min-height: 100vh;
   width: 100%;
   height: 100%;
   overflow-y: scroll;
@@ -92,7 +94,7 @@ input[type="url"] {
 }
 
 .gallery-background {
-  margin: 3em auto;
+  margin: auto;
   max-width: 1000px;
   padding: 3em;
   display: flex;
@@ -100,7 +102,7 @@ input[type="url"] {
   background: rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid var(--color1);
   border-right: 1px solid var(--color1);
-  box-shadow: -10px -10px 100px 30px black;
+  box-shadow: -10px -10px 150px 20px black;
 }
 
 .GalleryCard {
@@ -116,6 +118,7 @@ input[type="url"] {
   justify-self: flex-end;
   margin-right: 1em;
   box-shadow: 1px 1px 1px var(--color1);
+  margin-top: 0;
 }
 
 .gallery-image-container {
@@ -137,6 +140,7 @@ input[type="url"] {
   display: flex;
   flex-direction: row;
   height: 100px;
+  margin-top: 2em;
 }
 
 .ColorSample {
@@ -148,18 +152,21 @@ input[type="url"] {
   height: 100%;
 }
 
-.color-sample-details > p {
+.color-sample-details > * {
+  margin: 0px;
+  padding: 1px 0;
+  width: 100%;
+  text-align: center;
   background: rgba(255, 255, 255, 0.5);
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-content: center;
 }
 
 .color-sample-details {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
   opacity: 0;
   width: 100%;
-  height: 100%;
+  height: 110%;
   transition: 0.2s;
   transform: translateY(30px);
 }
@@ -230,8 +237,8 @@ button:hover {
 
 .lines {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 110vh;
+  height: 100vh;
   z-index: -1;
   display: flex;
   flex-direction: column;

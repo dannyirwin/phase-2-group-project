@@ -6,12 +6,17 @@ import ColorSample from "./ColorSample";
 export default function App({ palette, addPalette, changeTheme, toggleView }) {
   const [colors, setColors] = useState(palette.colors || []);
   const [imageUrl, setImageUrl] = useState(palette.imageUrl || "noUrl");
-
   const [hasExtractedColors, setHasExtractedColors] = useState(false);
 
-  const renderColorSamples = () => {
+  const showColorSamples = () => {
     return colors.map((color, id) => {
-      return <ColorSample color={color} key={id} />;
+      return (
+        <ColorSample
+          color={color}
+          key={id}
+          clipBoardEnabled={false} //TODO: change to true to make clipboard show
+        />
+      );
     });
   };
 
@@ -25,7 +30,7 @@ export default function App({ palette, addPalette, changeTheme, toggleView }) {
   };
 
   const handleSavePalette = event => {
-    addPalette({ colors, imageUrl });
+    addPalette({ colors, imageUrl, isTemplate: false });
     toggleView();
   };
 
@@ -35,38 +40,44 @@ export default function App({ palette, addPalette, changeTheme, toggleView }) {
 
   return (
     <div className="MainCard card">
-      <a className="colorExtractor-container" href={imageUrl} target="_blank">
+      <a
+        className="colorExtractor-container"
+        href={imageUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
         <ColorExtractor getColors={getColors}>
           <img
             className="colorExtractor-image"
             src={imageUrl}
-            /*  style={{ width: 700, height: 500 }} */
             alt="Display of url"
           />
         </ColorExtractor>
       </a>
-      <form onSubmit={handleExtractColors}>
-        <input
-          type="url"
-          name="imageUrl"
-          placeholder="Source image Url"
-          required
-        ></input>
-        <input
-          className="mainCard-button"
-          type="submit"
-          value="Extract Colors"
-        ></input>
-        {hasExtractedColors ? (
+      {palette.isTemplate ? (
+        <form onSubmit={handleExtractColors}>
+          <input
+            type="url"
+            name="imageUrl"
+            placeholder="Source Image Url"
+            required
+          ></input>
           <input
             className="mainCard-button"
             type="submit"
-            onClick={handleSavePalette}
-            value="Save palette"
+            value="Extract Colors"
           ></input>
-        ) : null}
-      </form>
-      <div className="colors-container">{renderColorSamples()}</div>
+          {hasExtractedColors ? (
+            <input
+              className="mainCard-button"
+              type="submit"
+              onClick={handleSavePalette}
+              value="Save palette"
+            ></input>
+          ) : null}
+        </form>
+      ) : null}
+      <div className="colors-container">{showColorSamples()}</div>
       <button className="mainCard-button" onClick={() => toggleView()}>
         Go To Gallery
       </button>
