@@ -29,6 +29,7 @@
   flex-direction: column;
   margin: auto;
   padding: 75px;
+  height: auto;
   background-color: rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid var(--color1);
   border-right: 1px solid var(--color1);
@@ -49,7 +50,7 @@
 }
 .mainCard-button {
   margin-top: 2em;
-  height: 100%;
+  height: auto;
   width: 100%;
   padding: 0.75em;
 }
@@ -59,6 +60,7 @@
   width: 100%;
   max-height: 500px;
   max-width: 700px;
+  margin-bottom: 2em;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -71,6 +73,7 @@
 
 input[type="url"] {
   background: rgba(255, 255, 255, 0.7);
+  box-shadow: 1px 1px 1px var(--color1);
   color: black;
   border: none;
   padding: 15px;
@@ -180,8 +183,7 @@ input[type="url"] {
 
 button,
 input[type="submit"] {
-  height: 100%;
-  margin: 2px;
+  margin: 0px 2px;
   border: none;
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 1px 1px 1px var(--color1);
@@ -277,9 +279,7 @@ button:hover {
 }
 
 form {
-  height: 100%;
   display: flex;
-  margin: 2em;
   justify-content: center;
   align-content: center;
 }
